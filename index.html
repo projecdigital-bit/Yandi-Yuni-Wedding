@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yandi & Yuni Wedding</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Georgia, serif;
+background:#f8f6f0;
+color:#444;
+}
+
+.hero{
+height:100vh;
+background:#d9e4d1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:3rem;
+margin:10px 0;
+}
+
+.hero h2{
+font-size:2rem;
+margin:10px 0;
+}
+
+.hero p{
+font-size:1.2rem;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#7c9a6d;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.section{
+padding:60px 20px;
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.countdown{
+font-size:2rem;
+font-weight:bold;
+margin-top:20px;
+}
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+<h4>The Wedding Of</h4>
+<h1>Yandi Romadona</h1>
+<h2>&</h2>
+<h1>Yuniarti Nur Azizah</h1>
+<p>10 Oktober 2026</p>
+
+<a class="btn" href="#countdown">
+Buka Undangan
+</a>
+</section>
+
+<section class="section" id="countdown">
+<h2>Menuju Hari Bahagia</h2>
+<div id="timer" class="countdown"></div>
+</section>
+
+<section class="section">
+<h2>Profil Mempelai</h2>
+<p>Data akan ditambahkan nanti.</p>
+</section>
+
+<section class="section">
+<h2>Love Story</h2>
+<p>Cerita perjalanan cinta akan ditambahkan nanti.</p>
+</section>
+
+<section class="section">
+<h2>Akad Nikah</h2>
+<p>10 Oktober 2026</p>
+<p>Lokasi menyusul</p>
+</section>
+
+<section class="section">
+<h2>Resepsi</h2>
+<p>10 Oktober 2026</p>
+<p>Lokasi menyusul</p>
+</section>
+
+<script>
+
+const targetDate = new Date("2026-10-10T08:00:00");
+
+function updateCountdown(){
+
+const now = new Date();
+const distance = targetDate - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("timer").innerHTML =
+days + " Hari " +
+hours + " Jam " +
+minutes + " Menit";
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+</html>
